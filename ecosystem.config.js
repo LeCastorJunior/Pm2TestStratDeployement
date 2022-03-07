@@ -12,7 +12,7 @@ module.exports = {
       key : '/Users/mon_macbook/.ssh/id_rsa',
       user : 'lecastor',
       host : '54.38.191.163',
-      ssh_options: 'ForwardAgent=yes',
+      // ssh_options: 'ForwardAgent=yes',
       ref  : 'origin/main',
       repo : 'git@github.com:LeCastorJunior/Pm2TestStratDeployement.git',
 	path : '/home/lecastor/leCastor/pm2Test',
