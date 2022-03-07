@@ -9,6 +9,7 @@ module.exports = {
 
   deploy : {
     production : {
+      key : '/Users/mon_macbook/.ssh/id_rsa.pub',
       user : 'lecastor',
       host : '54.38.191.163',
       ref  : 'origin/main',
