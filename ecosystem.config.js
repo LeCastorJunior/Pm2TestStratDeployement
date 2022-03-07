@@ -9,10 +9,11 @@ module.exports = {
 
   deploy : {
     production : {
-      user : 'mon_macbook',
+      user : 'lecastor',
       host : '54.38.191.163',
       ref  : 'origin/main',
-      path : 'git@github.com:LeCastorJunior/Pm2TestStratDeployement.git',
+      repo : 'git@github.com:LeCastorJunior/Pm2TestStratDeployement.git',
+	path : '/home/lecastor/leCastor/pm2Test',
       'pre-deploy-local': '',
       'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
       'pre-setup': ''
