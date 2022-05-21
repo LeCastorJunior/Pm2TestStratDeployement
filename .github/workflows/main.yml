@@ -50,5 +50,5 @@ jobs:
           # ssh remote password
           pass: Alnesis39+
           
-          run: |
+          first_ssh: |
             touch gitoune.txt
