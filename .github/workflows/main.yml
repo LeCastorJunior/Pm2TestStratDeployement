@@ -52,7 +52,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: bundle
-          path: ./dist
+          path: ./
           
   deploy:
           runs-on: ubuntu-latest
@@ -63,7 +63,7 @@ jobs:
               uses: actions/download-artifact@master
               with:
                 name: bundle
-                path: ./dist
+                path: ./
           
             - name: ssh deploy
               # You may pin to the exact commit or the version.
