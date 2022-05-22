@@ -36,10 +36,10 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
      
-      - name: Prepare SSH to work with the remote server
+      - name: npm install
         run: |
           ls
-          npm -install
+          npm install
           
       - name: Prepare SSH to work with the remote server
         run: |
