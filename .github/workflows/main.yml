@@ -35,6 +35,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+      - name: Prepare SSH to work with the remote server
+        run: |
+          cd ~ && mkdir .ssh &&
+          touch ~/.ssh/known_hosts &&
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/known_hosts
      
       - name: ssh deploy
         # You may pin to the exact commit or the version.
