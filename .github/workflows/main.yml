@@ -66,6 +66,7 @@ jobs:
                 echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/known_hosts
                 ls ~/.ssh
                 cat ~/.ssh/known_hosts
+                ssh-keyscan -H 54.38.191.163 >> ~/.ssh/known_hosts
 
             - name: Download artifact
               uses: actions/download-artifact@master
