@@ -47,7 +47,7 @@ jobs:
             REMOTE_HOST: ${{secrets.SSH_REMOTE_HOST}}
             # Remote user
             REMOTE_USER: ${{ secrets.SSH_REMOTE_USER }}
-            # Remote port
+            # Remote port 22
             REMOTE_PORT: 22
             # Source directory
             SOURCE: "dist/"
