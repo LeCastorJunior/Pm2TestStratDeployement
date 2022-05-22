@@ -57,13 +57,21 @@ jobs:
   deploy:
           runs-on: ubuntu-latest
           needs: build
-
+          
           steps:
+            - name: Prepare SSH to work with the remote server
+              run: |
+                cd ~ && mkdir .ssh &&
+                touch ~/.ssh/known_hosts &&
+                echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/known_hosts
+                ls ~/.ssh
+                cat ~/.ssh/known_hosts
+
             - name: Download artifact
               uses: actions/download-artifact@master
               with:
                 name: bundle
-                path: ./
+                path: ./            
           
             - name: Deploy project with SSH
               uses: easingthemes/ssh-deploy@v2.1.4
