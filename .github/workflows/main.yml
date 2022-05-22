@@ -35,20 +35,23 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      
-      - name: ssh-scp-ssh-pipelines
-       # You may pin to the exact commit or the version.
-        # uses: cross-the-world/ssh-scp-ssh-pipelines@78e864b4890087a58248ff39320406971ca88b89
-        uses: cross-the-world/ssh-scp-ssh-pipelines@v1.1.4
+     
+      - name: ssh deploy
+        # You may pin to the exact commit or the version.
+        # uses: easingthemes/ssh-deploy@c711f2c3391cac2876bf4c833590077f02e4bcb8
+        uses: easingthemes/ssh-deploy@v2.2.11
         with:
-          # ssh remote host
-          host: 54.38.191.163
-          # ssh remote port
-          port: 22
-          # ssh remote user
-          user: lecastor
-          # ssh remote password
-          pass: Alnesis39+
-          
-          first_ssh: |
-            touch gitoune.txt
+            # Private Key
+            SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+            # Remote host
+            REMOTE_HOST: ${{secrets.SSH_REMOTE_HOST}}
+            # Remote user
+            REMOTE_USER: ${{ secrets.SSH_REMOTE_USER }}
+            # Remote port
+            REMOTE_PORT: 22
+            # Source directory
+            SOURCE: "dist/"
+            # Target directory
+            TARGET: ${{ secrets.REMOTE_TARGET}}
+            # Arguments to pass to rsync
+            ARGS: "-rltgoDzvO" 
