@@ -73,15 +73,7 @@ jobs:
               with:
                 name: bundle
                 path: ./            
-            - name: copy file via ssh password
-              uses: appleboy/scp-action@master
-              with:
-                host: ${{ secrets.SSH_REMOTE_HOST }}
-                username: ${{ secrets.SSH_REMOTE_USER }}
-                password: "Alnesis39+"
-                port: 22
-                source: "./*"
-                target: "~/dev"
+
           
             - name: Deploy project with SSH
               uses: easingthemes/ssh-deploy@v2.2.11
